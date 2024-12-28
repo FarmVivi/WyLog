@@ -5,11 +5,11 @@ apply plugin: 'idea'
 apply plugin: 'maven-publish'
 
 group = 'net.wytrem'
-version = '2.0'
+version = '2.0.0'
 archivesBaseName = 'wylog'
 
-sourceCompatibility = 1.6
-targetCompatibility = 1.6
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
 
 compileJava.options.encoding = 'UTF-8'
 
@@ -17,12 +17,10 @@ repositories {
     mavenCentral()
 }
 
-
 dependencies {
-    compile 'org.slf4j:slf4j-api:1.7.22'
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    implementation 'org.slf4j:slf4j-api:1.7.35'
 }
-
-
 
 publishing {
     publications {
@@ -30,12 +28,16 @@ publishing {
             from components.java
         }
     }
-}
-publishing {
     repositories {
         maven {
-            url "${System.properties['user.home']}/Wytrem.github.io/maven/"
+            name = "GitHubPackages"
+            // Remplace <OWNER> et <REPOSITORY> par tes valeurs
+            url = uri("https://maven.pkg.github.com/FarmVivi/WyLog")
+            credentials {
+                // On utilise ici les variables d'env définies dans la GitHub Action
+                username = System.getenv("USERNAME")
+                password = System.getenv("GITHUB_TOKEN")
+            }
         }
     }
 }
-
