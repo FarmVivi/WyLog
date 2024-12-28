@@ -4,19 +4,16 @@ Basic SLF4J implementation.
 ## Dependency
 Gradle :
 ```gradle
-
-
 repositories {
     // [...]
     maven {
-        url "http://wytrem.github.io/maven/"
+        url "https://public:&#103;hp_UjDy47tL0exHkD1ferrphnAcMON7As0fE3io@maven.pkg.github.com/FarmVivi/*"
     }
 }
 
-
 dependencies {
     // [...]
-    compile 'net.wytrem:wylog:2.0'
+    compile 'net.wytrem:wylog:2.0.0'
 }
 ```
 
