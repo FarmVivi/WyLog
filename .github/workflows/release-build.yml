@@ -44,9 +44,7 @@ jobs:
       # Upload du .jar sur la release GitHub (uniquement si c’est une release)
       - name: Upload JAR to release
         if: ${{ github.event_name == 'release' }}
-        uses: actions/upload-release-asset@v1
+        uses: csexton/release-asset-action@v3
         with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: build/libs/${{ steps.find_jar.outputs.jar_name }}
-          asset_name: ${{ steps.find_jar.outputs.jar_name }}
-          asset_content_type: application/java-archive
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          file: build/libs/${{ steps.find_jar.outputs.jar_name }}
