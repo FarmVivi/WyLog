@@ -7,7 +7,7 @@ Gradle :
 repositories {
     // [...]
     maven {
-        url "https://public:&#103;hp_UjDy47tL0exHkD1ferrphnAcMON7As0fE3io@maven.pkg.github.com/FarmVivi/*"
+        url "https://public:&#103;hp_HlKJ3MHXAJoo8n7nOdWzumL6dGMQCF2fpd7L@maven.pkg.github.com/FarmVivi/*"
     }
 }
 
